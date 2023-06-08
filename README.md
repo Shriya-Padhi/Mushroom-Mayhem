@@ -2,8 +2,8 @@
 Pair Prototyping Assignment for CSCI 526 at USC
 
 ## Contributors:
-Shaoxuan Liu
-Shriya Padhi
+- Shaoxuan Liu
+- Shriya Padhi
 
 ## Description:
 Mushroom Mayhem is an exciting 2D platformer game developed as part of our Pair Prototyping assignment for the course CSCI 526 at USC. The game challenges players to navigate through a vibrant world filled with platforms, collect mushrooms, and reach the end point within a time limit.
