@@ -14,7 +14,7 @@ Mushroom Mayhem is an exciting 2D platformer game developed as part of our Pair 
 - Invisibility power-up: Activate invisibility to safely collect mushrooms, while touching them without invisibility costs a life.
 - Level progression: Complete each level before time runs out and achieve the required minimum number of mushrooms.
 - Three lives represented by heart symbols, adding an element of strategy and risk management.
-= Challenging level design with carefully placed platforms and obstacles.
+- Challenging level design with carefully placed platforms and obstacles.
 
 ## Technologies Used:
 - Unity game engine
