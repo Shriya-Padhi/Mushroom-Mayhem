@@ -20,15 +20,18 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         if (!Globals.canCtrl) { return; }
+        // horizontal movement
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
+        // jump, multi-jump prevention
         if (Input.GetKeyDown(KeyCode.Space) && Globals.canJmp)
         {
             rb2d.AddForce(new Vector2(0, jumpforce));
             Globals.canJmp = false;
             StartCoroutine(DisableJmp());
         }
-        if (transform.position.y < -50)
+        // forever falling prevention
+        if (transform.position.y < -30)
         {
             // Debug.Log("Falling");
             Globals.paused = true;
@@ -63,6 +66,7 @@ public class Player_Movement : MonoBehaviour
         Globals.canCtrl = true;
     }
 
+    // coroutine for multi-jump prevention
     private IEnumerator DisableJmp()
     {
         yield return new WaitForSeconds(1.0f);

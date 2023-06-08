@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 4596460c8fd252e4fbb6964489036de5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRenderer: {fileID: 0}
+  player_normal: {fileID: 21300000, guid: 4596460c8fd252e4fbb6964489036de5, type: 3}
+  player_powerUp: {fileID: 21300000, guid: 47c9ca0e4d3cc7e44be02be02bc1d646, type: 3}
   pwrTimeRemain: 0
   pwrCd: 0
 --- !u!114 &730220472922112814
@@ -129,7 +131,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -137,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &4559287
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,6 +153,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.95, y: 3.3}
+  m_Offset: {x: 0.010447502, y: -0.743883}
+  m_Size: {x: 0.7589874, y: 1.5614946}
   m_Direction: 0

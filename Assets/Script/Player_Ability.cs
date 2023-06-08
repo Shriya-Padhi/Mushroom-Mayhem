@@ -7,6 +7,8 @@ public class Player_Ability : MonoBehaviour
 {
     
     public SpriteRenderer playerRenderer;
+    public Sprite player_normal;
+    public Sprite player_powerUp;
     public float pwrTimeRemain;
     public float pwrCd;
     
@@ -22,7 +24,7 @@ public class Player_Ability : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !Globals.powerUp && !Globals.cd)
         {
             Globals.powerUp = true;
-            playerRenderer.color = Color.red; // FIX: display different sprite
+            playerRenderer.sprite = player_powerUp; // FIX: display different sprite
             // Display PowerUp Face on Canvas
             StartCoroutine(pwr_Timer());
         }
@@ -32,7 +34,7 @@ public class Player_Ability : MonoBehaviour
     {
         yield return new WaitForSeconds(pwrTimeRemain);
         Globals.powerUp = false;
-        playerRenderer.color = Color.white; // FIX: display different sprite
+        playerRenderer.sprite = player_normal; // FIX: display different sprite
         pwrTimeRemain = 3.0f;
         
         Globals.cd = true;

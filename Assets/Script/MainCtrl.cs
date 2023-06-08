@@ -18,6 +18,9 @@ public class MainCtrl : MonoBehaviour
 
     public Text counter;        // change in unity
 
+    public GameObject pauseMenu;// change in unity
+    public bool pausedNow;
+
     void Start()
     {
         // player related
@@ -29,7 +32,7 @@ public class MainCtrl : MonoBehaviour
         Globals.canJmp = true;
         afterDmgTime = 3.0f;
         // collectable related
-        Globals.required = 5;
+        Globals.required = 15;
         Globals.collected = 0;
         counter.text = string.Format("0/{0}", Globals.required);
         // game state related
@@ -40,15 +43,18 @@ public class MainCtrl : MonoBehaviour
         winningTxt.enabled = false;
         losingTxt.enabled = false;
         respawnBtn.gameObject.SetActive(false);
+        pausedNow = false;
+        pauseMenu.SetActive(pausedNow);
         // timer related
         Time.timeScale = 1;
-        TimeLeft = 30;
+        TimeLeft = 75;
         TimerOn = true;
     }
     
     void Update()
     {
         // game ended
+        // FIX: Globals.paused should be renamed as Globals.ended
         if (Globals.paused || TimeLeft <= 0)
         {
             Time.timeScale = 0;
@@ -58,6 +64,13 @@ public class MainCtrl : MonoBehaviour
             // display respawn button
             respawnBtn.gameObject.SetActive(true);
             return;
+        }
+        // actual pause state
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pausedNow = !pausedNow;
+            pauseMenu.SetActive(pausedNow);
+            Time.timeScale = (Time.timeScale + 1) % 2;
         }
         // player just received damage
         if (Globals.playerStatus == "damaged") { StartCoroutine(AfterDmgProcess()); }
