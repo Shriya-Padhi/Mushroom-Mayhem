@@ -33,7 +33,7 @@ public class MainCtrl : MonoBehaviour
         afterDmgTime = 3.0f;
         // collectable related
         Globals.required = 15;
-        Globals.collected = 0;
+        Globals.collected = 0; // change back to 0 !!!
         counter.text = string.Format("0/{0}", Globals.required);
         // game state related
         Globals.paused = false;

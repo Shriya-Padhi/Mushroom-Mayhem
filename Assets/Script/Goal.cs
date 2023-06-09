@@ -7,7 +7,7 @@ public class Goal : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && Globals.collected == Globals.required)
+        if (other.CompareTag("Player") && Globals.collected >= Globals.required)
         {
             Globals.gameState = "win";
             Globals.paused = true;
